@@ -19,12 +19,10 @@ def main_view(request):
     categories = Category.objects.filter(is_visible=True)
     chefs = Chef.objects.filter(is_visible=True)
     why_us = Why_us.objects.filter(is_visible=True)
-    get_object_or_404(why_us, pk=1)
     response = Response.objects.filter(is_visible=True)
     events = Event.objects.filter(is_visible=True)
     gallery = Gallery.objects.filter(is_visible=True)
     about = About.objects.filter(is_visible=True)
-    get_object_or_404(about, pk=1)
     footer = Footer.objects.all()
 
     return render(request, 'base.html', context={
